@@ -19,4 +19,8 @@
         %div{:id => flash_item}
           = h flash[flash_item]
           = link_to_function "x", "$('#{flash_item}').hide()", :class => 'right'
-    = yield
+    #main
+      = yield
+    #footer
+      %a(href="http://www.michaeleconomy.com") © #{Date.today.year} Michael Economy
+      %a(href="https://github.com/michaeleconomy/bookmates") fork me on github

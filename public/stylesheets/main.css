@@ -41,6 +41,10 @@ h1 {
 #nav {
   float:right;
 }
+#main {
+  overflow:hidden;
+  width:100%;
+}
 
 a {
   color:#E94E77;
