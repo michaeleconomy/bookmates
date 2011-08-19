@@ -45,6 +45,9 @@ h1 {
   overflow:hidden;
   width:100%;
 }
+#footer {
+  padding-top:50px;
+}
 
 a {
   color:#E94E77;

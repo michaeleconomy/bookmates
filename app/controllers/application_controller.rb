@@ -31,8 +31,7 @@ class ApplicationController < ActionController::Base
   end
   
   GOODREADS_CONSUMER = 
-    OAuth::Consumer.new(key = "BGlVP1E1V4fhpPb6N2ezLA",
-      secret = "rEe509o0fs4xrsSoS8nYnIZU8gN0ldfgwnH95jds",
+    OAuth::Consumer.new(Secret[:goodreads_key], Secret[:goodreads_secret],
       {:site => "http://www.goodreads.com"})
   
   
