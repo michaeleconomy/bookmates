@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title
+      = @title ? @title + " - bookmates" : "bookmates"
+    = stylesheet_link_tag :all
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
+  %body
+    #header
+      %a#logo(href="/") bookmates
+      - if signed_in?
+        #nav
+          %a{:href => mate_path(current_mate)} My Profile
+          %a{:href => mates_path} Browse
+          %a{:href => sign_out_path} Sign out
+    - [:notice, :error].each do |flash_item|
+      - unless flash[flash_item].blank?
+        %div{:id => flash_item}
+          = h flash[flash_item]
+          = link_to_function "x", "$('#{flash_item}').hide()", :class => 'right'
+    = yield

@@ -1,0 +1,6 @@
+= h1_title "Browse profiles"
+- if @mates.empty?
+  Sorry, no profiles matched your criteria.
+- else 
+  = render :partial => "mates/mate", :collection => @mates
+  = will_paginate @mates

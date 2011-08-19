@@ -1,0 +1,7 @@
+.mate
+  %a{:href => mate_path(mate)}
+    %img{:src => mate.thumbnail_url, :alt => mate.name}
+  %a{:href => mate_path(mate)}= mate.name
+  = pluralize mate.books_count, "book"
+  = mate.location
+  

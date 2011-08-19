@@ -1,0 +1,58 @@
+/* http://www.colourlovers.com/palette/867235/LoversInJapan */
+body {
+  font-family:'lovemoi';
+  font-size:32px;
+  line-height:20px;
+  background-color:#F4EAD5;
+  color: #C6A49A;
+}
+
+h1 {
+  font-size:62px;
+  color: #E94E77;
+}
+
+#logo {
+  font-size:50px;
+}
+
+#graphic {
+  float:left;
+  background-image:url(/images/couple_reading.jpg);
+  width: 400px;
+  height: 600px;
+  position:relative;
+}
+#graphic a{
+  position:absolute;
+  right:10px;
+  bottom:20px;
+}
+#home-content {
+  float:left;
+  width: 500px;
+  padding:40px;
+}
+#header {
+  overflow:hidden;
+  width:100%;
+  padding:4px;
+}
+#nav {
+  float:right;
+}
+
+a {
+  color:#E94E77;
+}
+a:hover {
+  color:#D68189;
+}
+
+@font-face {
+	font-family: 'lovemoi';
+	src: url('/types/lovemoi.eot');
+	src: local('☺'), url('/type/lovemoi.woff') format('woff'), url('/type/lovemoi.ttf') format('truetype'), url('/type/lovemoi.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

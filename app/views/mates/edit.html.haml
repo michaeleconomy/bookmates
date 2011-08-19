@@ -1,0 +1,18 @@
+= h1_title "edit your profile"
+%a{:href => mate_path(@mate)}
+  see my profile
+  
+%a{:href => refresh_mate_path}
+  refresh profile against goodreads.com
+
+- gender_options = [['Select', ''], ['Male', 'M'], ['Female', 'F']]
+= form_for(@mate, :builder => EasyFormBuilder) do |f|
+  = f.text_field :name
+  = f.text_field :location
+  = f.text_field :postal_code
+  = f.text_field :birthday
+  = f.select :gender, gender_options
+  = f.select :looking_for_gender, gender_options
+  = f.text_field :favorite_book
+  = f.text_field :hobbies
+  = f.submit "save"

@@ -1,0 +1,23 @@
+- if current_mate_is_mate?
+  %a{:href => edit_mate_path(current_mate)} Edit my profile
+= link_to_if @next, "next", @next
+= link_to_if @previous, "previous", @previous
+= h1_title @mate.name
+
+%img{:src => @mate.profile_photo_url, :alt => @mate.name}
+
+%a.button{:href => "http://www.goodreads.com/message/new/#{@mate.goodreads_id}"}
+  Send Message
+
+
+%a{:href => "http://www.goodreads.com/user/show/#{@mate.goodreads_id}"}
+  = @mate.books_count
+  books
+
+%table
+  - %w(age gender hobbies favorite_book location).each do |attr|
+    - value = @mate.send(attr)
+    - if value
+      %tr
+        %th= attr.humanize
+        %td= value
