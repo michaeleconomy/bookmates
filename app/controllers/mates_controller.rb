@@ -1,7 +1,7 @@
 class MatesController < ApplicationController
   before_filter :require_sign_in
-  before_filter :load_mate, :only => [:show, :edit, :update]
-  before_filter :require_self, :only => [:edit, :update]
+  before_filter :load_mate, :only => [:show, :edit, :update, :destroy]
+  before_filter :require_self, :only => [:edit, :update, :destroy]
   
   def index
     if current_mate.looking_for_gender?
@@ -46,6 +46,12 @@ class MatesController < ApplicationController
       return
     end
     render :action => 'edit'
+  end
+  
+  def destroy
+    @mate.destroy
+    clear_session
+    redirect_to "/"
   end
   
   

@@ -55,9 +55,7 @@ class AuthController < ApplicationController
   end
   
   def sign_out
-    session[:mate_id] = nil
-    session[:oauth_token] = nil
-    session[:oauth_token_secret] = nil
+    clear_session
     redirect_to "/"
   end
 end

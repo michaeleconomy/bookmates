@@ -16,3 +16,10 @@
   = f.text_field :favorite_book
   = f.text_field :hobbies
   = f.submit "save"
+%br
+%br
+%br
+= link_to "delete my account",
+  @mate,
+  :method => "delete",
+  :confirm => "are you sure you'd like to delete your account?"

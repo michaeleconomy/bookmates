@@ -41,6 +41,12 @@ class ApplicationController < ActionController::Base
         session[:oauth_token_secret])
   end
   
+  def clear_session
+    session[:mate_id] = nil
+    session[:oauth_token] = nil
+    session[:oauth_token_secret] = nil
+  end
+  
   
   
   %w(Mate).each do |klass_name|

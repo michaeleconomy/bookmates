@@ -44,6 +44,7 @@ h1 {
 #main {
   overflow:hidden;
   width:100%;
+  padding: 15px 0px;
 }
 #footer {
   padding-top:50px;
