@@ -10,5 +10,15 @@ class EasyFormBuilder < ActionView::Helpers::FormBuilder
         content_tag(:div, label(attribute) + super(attribute, options) + extra_stuff.to_s)
       end
     end
+  
+    %w(select).each do |name|
+      define_method name do |args|
+        attribute, choices, options = args
+        if options.is_a?(Hash)
+          extra_stuff = options.delete :extra_stuff
+        end
+        content_tag(:div, label(attribute) + super(attribute, choices, options) + extra_stuff.to_s)
+      end
+    end
   end
 end
